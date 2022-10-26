@@ -163,4 +163,94 @@ for element in my_dict:
         continue
         
 #functions
+def sayHello():
+  print('hello')
 
+sayHello()
+
+def sumValues(fV: int, sV: int):
+  print(fV + sV)
+
+sumValues(2,3);
+
+def timesValues(fv, sV):
+  return fv * sV
+  
+result = timesValues(2,3)
+print(result)
+
+def pwValues(fV: int, sV: int = 2):
+  return fV ** sV
+  
+result: int = pwValues(3)
+print(result)
+
+def sAllValues(*values: int):
+  result: int = 0
+  for numb in values:
+    result += numb
+  return result
+  
+result: int = sAllValues(2,3,4,5,6,7,7)
+print(result)
+
+#Classes
+class Person:
+  pass
+print(Person)
+
+class Operators:
+  def __init__(self, fV: int, sV: int):
+    self.fV = fV
+    self.sV = sV
+  
+  def sum(self):
+    return f'sum: {self.fV + self.sV}'
+  
+  def divide(self):
+    return f'divide: {self.fV / self.sV}'
+
+calculator = Operators(2, 3)
+print(calculator.fV)
+print(calculator.sum())
+
+calculator.fV = 3
+print(calculator.divide())
+
+#Exceptions
+valueOne = 1
+valueTwo = 'Hello'
+
+try:
+  print(valueOne + valueTwo)
+  print('G00D')
+except:
+  print('ERR0R')
+    
+try:
+    print(valueOne + valueTwo)
+    print("No se ha producido un error")
+except:
+    print("Se ha producido un error")
+else: # Opcional
+    # Se ejecuta si no se produce una excepción
+    print("La ejecución continúa correctamente")
+finally: # Opcional
+    # Se ejecuta siempre
+    print("La ejecución continúa")
+    
+try:
+    print(valueOne + valueTwo)
+    print("No se ha producido un error")
+except ValueError as error:
+    print(error)
+except Exception as my_random_error_name:
+    print(my_random_error_name)
+    
+import math
+from math import pi as PI_VALUE
+
+print(math.pi)
+print(math.pow(2, 8))
+
+print(PI_VALUE)
